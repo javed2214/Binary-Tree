@@ -31,14 +31,6 @@ void printTree(node *root){
 	}
 }
 
-void getVerticalOrder(node *root, int hd, map<int,vector<int>>&Map){
-
-	if(root==NULL) return;
-	Map[hd].push_back(root->data);
-	getVerticalOrder(root->left,hd-1,Map);
-	getVerticalOrder(root->right,hd+1,Map);	
-}
-
 void TopView(node *root){
 
 	if(root==NULL) return;
