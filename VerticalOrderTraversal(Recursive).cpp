@@ -1,4 +1,5 @@
 // Program to Find Vertical Order Traversal of a Binary Tree
+// Recursive Approach
 
 #include<bits/stdc++.h>
 using namespace std;
