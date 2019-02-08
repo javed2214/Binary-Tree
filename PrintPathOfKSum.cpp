@@ -1,4 +1,4 @@
-// Program to Print All the Paths from Root with a Specified SUm in Binary Tree
+// Program to Print All the Paths from Root with a Specified Sum in Binary Tree
 
 #include<bits/stdc++.h>
 using namespace std;
