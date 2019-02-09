@@ -54,12 +54,12 @@ void inOrder(node *root){
 		inOrder(root->right);
 	}
 }
-bool BSTUtil(node *root, int min, int max){
+bool BSTUtil(node *root, long min, long max){
 
 	if(root==NULL) return true;
-	int x=root->data;
+	long x=root->data;
 	if(x<=min or x>=max) return false;
-	return (BSTUtil(root->left,min,x) and BSTUtil(root->right,x,max))
+	return (BSTUtil(root->left,min,x) and BSTUtil(root->right,x,max));
 }
 bool isBinarySearchTree(node *root){
 
