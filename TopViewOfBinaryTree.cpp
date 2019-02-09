@@ -32,31 +32,27 @@ void printTree(node *root){
 	}
 }
 
-void TopView(node *root){
+void topViewLeft(node *root){
+	if(!root) return;
+	topViewLeft(root->left);
+	cout<<root->data<<" ";
+}
 
-	if(root==NULL) return;
+void topViewRight(node *root){
+	if(!root) return;
+	cout<<root->data<<" ";
+	topViewRight(root->right);
+}
 
-	queue<pair<node*,int>>q;
-	map<int,int>Map;
-	q.push(make_pair(root,0));
-	while(!q.empty()){
-		pair<node*,int>temp=q.front();
-		node *p=temp.first;
-		int hd=temp.second;
-		q.pop();
-		if(Map.find(hd)==Map.end()){
-			Map[hd]=p->data;
-			cout<<p->data<<" ";
-		}
-		if(p->left!=NULL)
-			q.push(make_pair(p->left,hd-1));
-		if(p->right!=NULL)
-			q.push(make_pair(p->right,hd+1));
-	}
+void topView(node *root){
+	if(!root) return;
+	topViewLeft(root->left);
+	cout<<root->data<<" ";
+	topViewRight(root->right); 
 }
 
 int main(){	
-	int a[]={20,10,40,5,2,15,30,50,22,35,36,37};
+	int a[]={1,2,5,6,3,4};
 	int n=sizeof(a)/sizeof(int);
 
 	node *root=NULL;
@@ -66,7 +62,7 @@ int main(){
 
 	printTree(root);
 	cout<<"\n\nTop View: \n";
-	TopView(root);
+	topView(root);
 
 	return 0;
 }
