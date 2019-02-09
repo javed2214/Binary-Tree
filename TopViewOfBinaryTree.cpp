@@ -21,6 +21,7 @@ node *createTree(node *root, int n){
 		root->left=createTree(root->left, n);
 	else if(n>root->data)
 		root->right=createTree(root->right, n);
+	return root;
 }
 
 void printTree(node *root){
