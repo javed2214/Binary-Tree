@@ -79,7 +79,7 @@ int main(){
 		root=createTree(root,a[i]);
 	int p;
 	inOrder(root);
-	cout<<"\nInorder Successor of Wchich Node: ";
+	cout<<"\nInorder Successor of Which Node: ";
 	cin>>p;
 	node *k=inOrderSucc(root,p);
 	cout<<k->data;
