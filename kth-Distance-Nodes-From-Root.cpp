@@ -1,4 +1,4 @@
-// Program to Find All Nodes at 'k' Distance From Root of Binary Tree
+// Program to Find All the Nodes at kth Distance From Root of Binary Tree
 
 #include<bits/stdc++.h>
 using namespace std;
