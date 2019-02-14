@@ -46,7 +46,7 @@ node *buildTree(int *in, int *pre, int inS, int inE, int preS, int preE){
 	rInS=rootIndex+1;
 	rInE=inE;
 	lPreS=preS+1;
-	lPreE=lInE-lInS+lPreS;
+	lPreE=lInE-lInS+lPreS;		// lInS-lInE=lPreS-lPreE ==>> lPreE=lInE-lInS+lPreS
 	rPreS=lPreE+1;
 	rPreE=preE;
 	node *root=createNode(rootData);
