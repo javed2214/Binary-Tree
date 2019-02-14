@@ -41,7 +41,7 @@ int levelOrder(node *root){
 
 	int h=height(root);
 	int mx=INT_MIN,p;
-	for(int i=h-1;i>=0;i--){
+	for(int i=0;i<h;i++){
 		p=printlevelOrder(root,i);
 		mx=max(mx,p);
 	}
