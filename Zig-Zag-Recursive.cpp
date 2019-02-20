@@ -43,7 +43,8 @@ int treeHeight(node *root){
 }
 
 void zigZagTraversal(node *root, int h, int flag){
-
+	
+	if(root==NULL) return;
 	if(h==0){
 		cout<<root->data<<" ";
 		return;
