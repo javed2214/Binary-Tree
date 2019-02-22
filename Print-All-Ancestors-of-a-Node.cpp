@@ -1,4 +1,4 @@
-// Program to Print All Ancestors of a Node in Binary Tree
+// Program to Print All the Ancestors of a Node in a Binary Tree
 
 #include<bits/stdc++.h>
 using namespace std;
@@ -23,18 +23,17 @@ node *createTree(node *root, int n){
 	else if(n>root->data)
 		root->right=createTree(root->right,n);
 }
+bool printAncestors(node *root, int k){
 
-int prinAncestors(node *root, int k){
+	if(root==NULL) return false;
 
-	if(root){
-		if(root->data==k)
-			return 1;
-		if(prinAncestors(root->left,k) or prinAncestors(root->right,k)){
-			cout<<root->data<<" ";
-			return 1;
-		}
+	if(root->data==k) return true;
+	
+	if(printAncestors(root->left,k) or printAncestors(root->right,k)){
+		cout<<root->data<<" ";
+		return true;
 	}
-	return 0;
+	else return false;
 }
 
 int main(){
@@ -46,10 +45,9 @@ int main(){
 	for(int i=0;i<n;i++)
 		root=createTree(root,a[i]);
 	
-	int k;
-	cout<<"Ancestors of which Node: ";
-	cin>>k;
-	prinAncestors(root,k);
+	int k=17;
+	cout<<"Ancestors of "<<k<<": ";
+	printAncestors(root,k);
 
 	return 0;
 }
