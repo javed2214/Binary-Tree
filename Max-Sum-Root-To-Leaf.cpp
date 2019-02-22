@@ -9,47 +9,48 @@ typedef struct node{
 	struct node *right;
 }node;
 
-node *createTree(node *root, int n){
-	if(root==NULL){
-		root=(node *)malloc(sizeof(node));
-		root->data=n;
-		root->left=NULL;
-		root->right=NULL;
+node *createNode(int n){
 
-		return root;
-	}
-	else if(n<root->data)
-		root->left=createTree(root->left,n);
-	else if(n>root->data)
-		root->right=createTree(root->right,n);
+	node *root=(node *)malloc(sizeof(node));
+	root->data=n;
+	root->left=NULL;
+	root->right=NULL;
+
+	return root;
 }
 
-void inOrder(node *root){
-	if(root){
-		inOrder(root->left);
-		cout<<root->data<<" ";
-		inOrder(root->right);
-	}
+static int s=INT_MIN;
+void getSum(std::vector<int> &v){
+
+	int p=accumulate(v.begin(),v.end(),0);   // Calculate Vector Sum
+	s=max(s,p);
 }
 
-int maxSum(node *root){
+void maxSum(node *root, std::vector<int> v){
 
-	if(root==NULL) return 0;
-	return root->data + max(maxSum(root->left), maxSum(root->right));
+	if(root==NULL) return;
+	v.push_back(root->data);
+	if(root->left==NULL and root->right==NULL)
+		getSum(v);
+	maxSum(root->left,v);
+	maxSum(root->right,v);
 }
 
 int main(){
 
-	node *root=NULL;
-	int a[]={30,10,50,5,20,15,25};
-	int n=sizeof(a)/sizeof(int);
+	node *root=createNode(10);
+	root->left=createNode(30);
+	root->right=createNode(7);
+	root->left->left=createNode(-8);
+	root->left->right=createNode(-4);
+	root->left->right->right=createNode(-2);
 
-	for(int i=0;i<n;i++)
-		root=createTree(root,a[i]);
+	std::vector<int> v;
 
-	inOrder(root);
-	cout<<"\nMax Sum: ";
-	cout<<maxSum(root);
+	maxSum(root,v);
+
+	cout<<s;
 
 	return 0;
 }
+
