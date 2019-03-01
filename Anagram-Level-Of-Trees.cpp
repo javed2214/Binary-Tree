@@ -69,19 +69,19 @@ node *newNode(int n){
 
 int main(){
 
-	node *root1, *root2;
+        node *root1, *root2;
 	
 	root1=newNode(1);
-	root1->left=newNode(3); 
-    root1->right=newNode(2); 
-    root1->right->left=newNode(5); 
-    root1->right->right=newNode(4);
+        root1->left=newNode(3); 
+	root1->right=newNode(2); 
+	root1->right->left=newNode(5); 
+	root1->right->right=newNode(4);
 
-    root2=newNode(1);
-    root2->left=newNode(2); 
-    root2->right=newNode(3); 
-    root2->left->left=newNode(4); 
-    root2->left->right=newNode(5);
+	root2=newNode(1);
+	root2->left=newNode(2); 
+	root2->right=newNode(3); 
+	root2->left->left=newNode(4); 
+	root2->left->right=newNode(5);
 
 	if(checkAnagrams(root1, root2)) cout<<"Trees are Anagrams!\n";
 	else cout<<"They Aren't!\n";
