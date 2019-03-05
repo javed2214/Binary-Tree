@@ -1,5 +1,6 @@
 // Program to Construct Balanced Binary Search Tree from Sorted Array
 // Recursive Approach
+// Asked in Many Interviews
 
 #include<bits/stdc++.h>
 using namespace std;
@@ -22,8 +23,8 @@ node *newNode(int n){
 
 node *sortedArrayToBST(int *a, int start, int end){
 
-	if(start > end)
-		return NULL;
+	if(start > end) return NULL;
+	
 	int mid=(start+end)/2;
 	node *root=newNode(a[mid]);
 	root->left=sortedArrayToBST(a,start,mid-1);
