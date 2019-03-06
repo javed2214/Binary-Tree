@@ -1,4 +1,5 @@
 // Program to Find Lowest Common Ancestor (LCA) of Binary Tree
+// https://www.youtube.com/watch?v=F-_1sbnPbWQ
 // Recursive Approach
 
 #include<bits/stdc++.h>
@@ -56,6 +57,7 @@ node *LCA(node *root, int n1, int n2){
 	if(root==NULL) return NULL;
 	if(root->data==n1 or root->data==n2)
 		return root;
+	
 	node *left=LCA(root->left,n1,n2);
 	node *right=LCA(root->right,n1,n2);
 
