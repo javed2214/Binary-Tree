@@ -1,4 +1,7 @@
 // Program to Merge Two BST
+// Algorithm => 1. Store Inorder of Both Roots in a Vector
+// 2. Merge those Vectors
+// 3. Convert Sorted Vector into Balanced BST
 
 #include<bits/stdc++.h>
 using namespace std;
@@ -88,8 +91,8 @@ void inOrder(node *root){
 
 int main(){
 
-	int a[]={30,10,50,60};
-	int b[]={20,5,35,70};
+	int a[]={30,10,50};
+	int b[]={20,15,35};
 	int n1=sizeof(a)/sizeof(int);
 	int n2=sizeof(b)/sizeof(int);
 
@@ -120,7 +123,7 @@ int main(){
 	int siz=v.size()-1;
 	root=buildTree(v,0,siz);
 
-	cout<<"\nAns: ";
+	cout<<"\nMerged BST: ";
 	inOrder(root);
 
 	return 0;
