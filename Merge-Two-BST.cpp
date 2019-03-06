@@ -1,5 +1,6 @@
 // Program to Merge Two BST
-// Algorithm => 1. Store Inorder of Both Roots in a Vector
+// Algorithm => 
+// 1. Store Inorder of Both Roots in a Vector
 // 2. Merge those Vectors
 // 3. Convert Sorted Vector into Balanced BST
 
