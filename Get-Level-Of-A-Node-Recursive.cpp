@@ -44,7 +44,7 @@ int nodeLevelUtil(node *root, int k){
 
 int main(){
 
-	node* root = getnode(20); 
+    node* root = getnode(20); 
     root->left = getnode(10); 
     root->right = getnode(30); 
     root->left->left = getnode(5); 
