@@ -26,16 +26,11 @@ bool childrenSum(node *root){
 
 	if(root==NULL or (root->left==NULL and root->right==NULL))
 		return true;
-	else{
-			
-		if(root->left!=NULL)   l=root->left->data;
-		if(root->right!=NULL)  r=root->right->data;
+	
+	if(root->left!=NULL)   l=root->left->data;
+	if(root->right!=NULL)  r=root->right->data;
 
-		if((root->data==l+r) and childrenSum(root->left) and childrenSum(root->right))
-			return true;
-		else
-			return false;
-	}
+	return (root->data==l+r) and childrenSum(root->left) and childrenSum(root->right);
 }
 
 int main(){	
