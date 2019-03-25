@@ -1,4 +1,4 @@
-// Implementation of AVL TREE.
+// Implementation of AVL TREE
 
 #include<stdio.h>
 #include<stdlib.h>
