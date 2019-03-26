@@ -73,7 +73,7 @@ int iterativeMethod(node *root){
 
 int main(){
 
-	node *root = newNode(5); 
+    node *root = newNode(5); 
     root->left = newNode(2); 
     root->right = newNode(6); 
     root->left->left  = newNode(1); 
