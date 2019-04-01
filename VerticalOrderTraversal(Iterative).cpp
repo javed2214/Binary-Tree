@@ -34,6 +34,8 @@ void printTree(node *root){
 
 void printverticalOrder(node *root){
 	
+	if(root==NULL) return;
+		
 	int hd=0;
 	queue<pair<node*,int>>q;
 	q.push(make_pair(root,hd));
