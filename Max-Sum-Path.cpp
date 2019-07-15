@@ -4,12 +4,14 @@
 // Asked in Most of the Interviews
 
 
-int maxSum(node *root, int &res){
+int res = INT_MIN;	// Global
+
+int maxSum(node *root){
 
 	if(root == NULL) return 0;
 
-	int l = maxSum(root->left, res);
-	int r = maxSum(root->right, res);
+	int l = maxSum(root->left);
+	int r = maxSum(root->right);
 
 	int max_single = max(max(l,r) + root->data, root->data);
 
@@ -22,7 +24,6 @@ int maxSum(node *root, int &res){
 
 int maxSumPath(node *root){
 
-	int res = INT_MIN;
 	maxSum(root, res);
 
 	return res;
