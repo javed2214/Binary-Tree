@@ -47,3 +47,34 @@ public:
         return x;
     }
 };
+
+
+
+
+// Slow
+
+class Solution {
+public:
+    
+    int x = 0;
+    
+    int sum(TreeNode *root){
+        if(root == NULL) return 0;
+        return root->val + sum(root->left) + sum(root->right);
+    }
+    
+    void nodes(TreeNode *root){
+       
+       if(root == NULL) return;
+        x += abs(sum(root->left) - sum(root->right));
+        nodes(root->left);
+        nodes(root->right);
+    }
+    
+    int findTilt(TreeNode* root) {
+       
+        nodes(root);
+        
+        return x;
+    }
+};
