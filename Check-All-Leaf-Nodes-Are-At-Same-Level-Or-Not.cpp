@@ -1,5 +1,6 @@
 // Program to Check Whether All Leaf Nodes are at Same Level or Not
 // https://www.geeksforgeeks.org/check-leaves-level/
+// Time Complexity: O(n)
 
 #include<bits/stdc++.h>
 using namespace std;
