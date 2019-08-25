@@ -1,4 +1,5 @@
 // Program to Print All the Ancestors of a Node in a Binary Tree
+// https://www.geeksforgeeks.org/print-ancestors-of-a-given-node-in-binary-tree/
 
 #include<bits/stdc++.h>
 using namespace std;
@@ -9,27 +10,23 @@ typedef struct node{
 	struct node *right;
 }node;
 
-node *createTree(node *root, int n){
-	if(root==NULL){
-		root=(node *)malloc(sizeof(node));
-		root->data=n;
-		root->left=NULL;
-		root->right=NULL;
+node *createNode(int x){
 
-		return root;
-	}
-	else if(n<root->data)
-		root->left=createTree(root->left,n);
-	else if(n>root->data)
-		root->right=createTree(root->right,n);
+	node *temp = (node *)malloc(sizeof(node));
+	temp->data = x;
+	temp->left = NULL;
+	temp->right = NULL;
+
+	return temp;
 }
-bool printAncestors(node *root, int k){
 
-	if(root==NULL) return false;
+bool findAncestors(node *root, int k){
 
-	if(root->data==k) return true;
+	if(root == NULL) return false;
 	
-	if(printAncestors(root->left,k) or printAncestors(root->right,k)){
+	if(root->data == k) return true;
+	
+	if(findAncestors(root->left,k) or findAncestors(root->right,k)){
 		cout<<root->data<<" ";
 		return true;
 	}
@@ -38,18 +35,19 @@ bool printAncestors(node *root, int k){
 
 int main(){
 
-	node *root=NULL;
-	int a[]={20,10,30,5,15,25,40,12,17};
-	int n=sizeof(a)/sizeof(int);
+	node *root = createNode(1);
+	root->left = createNode(2);
+	root->right = createNode(3);
+	root->left->left = createNode(4);
+	root->left->right = createNode(5);
+	root->right->left = createNode(6);
+	root->right->right = createNode(7);
+	root->right->right->right = createNode(8);
 
-	for(int i=0;i<n;i++)
-		root=createTree(root,a[i]);
-	
-	int k=17;
-	cout<<"Ancestors of "<<k<<": ";
-	printAncestors(root,k);
+	int k;
+	cin>>k;
+
+	findAncestors(root, k);
 
 	return 0;
 }
-
-
