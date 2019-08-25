@@ -1,4 +1,6 @@
 // Program to Find the Vertical Sum of Binary Tree
+// https://www.geeksforgeeks.org/vertical-sum-in-a-given-binary-tree/
+// Application of "Vertical Order Traversal".
 
 #include<bits/stdc++.h>
 using namespace std;
