@@ -14,5 +14,5 @@ bool SubTree(node *root1, node *root2){
 	if(root1==NULL) return false;
 	if(isIdentical(root1,root2))
 		return true;
-	return (Subtree(roor1->left, root2) || Subtree(root1->right, root2));
+	return (SubTree(roor1->left, root2) || SubTree(root1->right, root2));
 }
