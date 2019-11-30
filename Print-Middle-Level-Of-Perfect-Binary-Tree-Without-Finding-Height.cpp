@@ -36,7 +36,7 @@ void printMiddleLevel(node *fast, node *slow){
 
 	if(fast == NULL or slow == NULL) return;
 
-	if(fast->left == NULL and fast->left == NULL){
+	if(fast->left == NULL and fast->right == NULL){
 		cout<<slow->data<<" ";
 		return;
 	}
