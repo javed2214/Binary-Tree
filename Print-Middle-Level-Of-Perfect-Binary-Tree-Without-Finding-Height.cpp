@@ -47,7 +47,7 @@ void printMiddleLevel(node *fast, node *slow){
 
 int main(){
 
-	node *root = newNode(1); 
+    node *root = newNode(1); 
   
     root->left        = newNode(2); 
     root->right       = newNode(3); 
