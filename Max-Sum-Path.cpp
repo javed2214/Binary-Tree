@@ -4,27 +4,22 @@
 // Asked in Most of the Interviews
 
 
-int res = INT_MIN;	// Global
 
-int maxSum(node *root){
-
-	if(root == NULL) return 0;
-
-	int l = maxSum(root->left);
-	int r = maxSum(root->right);
-
-	int max_single = max(max(l,r) + root->data, root->data);
-
-	int max_top = max(max_single, l + r + root->data);
-
-	res = max(res, max_top);
-
-	return max_single;
-}
-
-int maxSumPath(node *root){
-
-	maxSum(root, res);
-
-	return res;
-}
+class Solution {
+public:
+    
+    int mx = INT_MIN;
+    
+    int dfs(TreeNode *root){
+        if(root == NULL) return 0;
+        int left = max(0, dfs(root->left));
+        int right = max(0, dfs(root->right));
+        mx = max(mx, left + right + root->val);
+        return max(left, right) + root->val;
+    }
+    
+    int maxPathSum(TreeNode* root) {
+        dfs(root);
+        return mx;
+    }
+};
