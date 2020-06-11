@@ -1,5 +1,6 @@
 // Kth Smallest Element in BST
 // https://leetcode.com/problems/kth-smallest-element-in-a-bst
+// Using Inorder Traversal
 
 class Solution {
 public:
